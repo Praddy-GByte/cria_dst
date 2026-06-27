@@ -1,0 +1,1244 @@
+/* ============================================================
+   CRB DST — style.css
+   ASU Brand: White sidebar · Maroon + Gold accents · 3D cards
+   ============================================================ */
+
+/* ── Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ── Color Variables ────────────────────────────────────────── */
+:root {
+  --maroon:     #8C1D40;
+  --maroon2:    #C62828;
+  --gold:       #FFC627;
+  --gold2:      #FFB300;
+  --navy:       #0D2137;
+  --navy2:      #1a3a5c;
+  --slate:      #37474f;
+  --slate2:     #546e7a;
+  --bg:         #F0F4F8;
+  --card-bg:    #FFFFFF;
+  --border:     #E2E8F0;
+  --text-main:  #1e293b;
+  --text-muted: #1e293b;   /* no grey — dark text everywhere */
+  --header-h:   64px;           /* shared height for sidebar logo + tab header */
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif !important;
+  background: var(--bg) !important;
+  color: var(--text-main) !important;
+  font-size: 13px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SIDEBAR  — white, ASU maroon/gold accents
+   ════════════════════════════════════════════════════════════ */
+.sidebar {
+  background: #eef2f6 !important;   /* light tint so the white blocks read as separate cards */
+  height: 100vh;
+  width: 232px;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 1000;
+  padding: 0 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-right: none;
+  box-shadow: 4px 0 18px rgba(13,33,55,0.12);
+}
+
+/* ── Sidebar logo — its own raised 3D card ─────────────────── */
+.sidebar-logo {
+  background: #ffffff;
+  min-height: var(--header-h);
+  margin: 10px 0 12px;             /* gap below → separated from the menu */
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1002;
+  box-shadow: 0 5px 14px rgba(13,33,55,0.14);
+}
+
+/* ── Sidebar menu — its own raised 3D card, distinct from the header ── */
+.sidebar nav {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 4px !important;
+  box-shadow: 0 5px 14px rgba(13,33,55,0.10);
+}
+
+.sidebar-logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--maroon);
+  line-height: 1.05;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 1px rgba(140,29,64,0.12);
+}
+
+.sidebar-logo-sub {
+  font-size: 11px;
+  color: #1e293b;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ── Nav section label ───────────────────────────────────────── */
+.nav-section-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--maroon);
+  padding: 14px 16px 4px 20px;
+  opacity: 0.65;
+}
+
+/* ── Nav links ───────────────────────────────────────────────── */
+.nav-link {
+  color: var(--slate) !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  padding: 9px 14px !important;
+  border-radius: 6px !important;
+  margin: 2px 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  transition: all 0.15s !important;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  background: rgba(140,29,64,0.07) !important;
+  color: var(--maroon) !important;
+}
+
+.nav-link.active {
+  background: var(--maroon) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 10px rgba(140,29,64,0.35) !important;
+}
+
+.nav-link .nav-icon {
+  width: 16px;
+  opacity: 0.75;
+}
+
+/* ── Sidebar bottom info ─────────────────────────────────────── */
+.sidebar-bottom {
+  position: static;
+  width: 100%;
+  margin: 12px 0 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(13,33,55,0.10);
+}
+
+.sidebar-bottom-text {
+  font-size: 10px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MAIN CONTENT
+   ════════════════════════════════════════════════════════════ */
+.main-content {
+  margin-left: 232px;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* ── Header logo bar ─────────────────────────────────────────── */
+.header-logo-bar {
+  background: transparent;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  height: 0;
+}
+
+.header-logo-strip {
+  position: absolute;
+  top: 10px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  pointer-events: auto;
+}
+
+.header-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 4px;
+  border: 2px solid white;
+  box-shadow: 0 0 0 3px var(--maroon), 0 3px 10px rgba(0,0,0,0.12);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.header-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px var(--maroon), 0 0 0 5px var(--gold), 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* ════════════════════════════════════════════════════════════
+   TAB HEADER — white, same height as sidebar logo
+   ════════════════════════════════════════════════════════════ */
+.tab-header {
+  background: #ffffff;
+  min-height: var(--header-h);
+  padding: 12px 22px;
+  margin: 0 16px;                  /* matches the title card → aligned, separate cards */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  /* Maroon left accent bar */
+  border-left: 5px solid var(--maroon);
+  /* layered 3D drop shadow — separate raised card */
+  box-shadow: 0 8px 20px rgba(13,33,55,0.14),
+              0 2px 5px rgba(13,33,55,0.08);
+}
+
+/* Maroon + gold bottom gradient line */
+.tab-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon) 0%, var(--gold) 55%, transparent 100%);
+}
+
+.tab-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 3px 0;
+  color: var(--maroon);
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+}
+
+.tab-header p {
+  font-size: 11px;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.tab-body {
+  padding: 16px 16px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   INFO TILES — top + left border only, maroon/gold, compact
+   ════════════════════════════════════════════════════════════ */
+/* ── Start-here guided step cards ── */
+.step-card {
+  display: block;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 12px 14px;
+  height: 100%;
+  border-top: 3px solid var(--maroon);
+  border-left: 3px solid var(--maroon);
+  box-shadow: -2px -2px 0 0 rgba(0,0,0,0.04), 2px 4px 10px rgba(0,0,0,0.07);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: -3px -3px 0 0 rgba(0,0,0,0.06), 4px 8px 18px rgba(0,0,0,0.12);
+}
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+.info-tile {
+  border-radius: 4px;
+  padding: 9px 28px 9px 12px;
+  background: #ffffff;
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  min-height: 78px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  /* No border by default — only top + left set by .tile-* */
+  border: none;
+  border-top: 3px solid var(--maroon);
+  border-left: 3px solid var(--maroon);
+  box-shadow:
+    -2px -2px 0 0 rgba(0,0,0,0.04),
+    2px 4px 10px rgba(0,0,0,0.07);
+  transform: translateY(0) translateX(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.info-tile:hover {
+  transform: translateY(-2px) translateX(1px);
+  box-shadow:
+    -3px -3px 0 0 rgba(0,0,0,0.06),
+    4px 8px 18px rgba(0,0,0,0.11);
+}
+
+.info-tile-value {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+  color: var(--maroon);
+}
+
+.info-tile-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+.info-tile-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+/* Alternate: gold accent tiles */
+.tile-gold,
+.tile-navy,
+.tile-green,
+.tile-orange,
+.tile-blue,
+.tile-purple,
+.tile-slate,
+.tile-teal {
+  border-top-color: var(--gold2);
+  border-left-color: var(--gold2);
+}
+.tile-gold   .info-tile-value,
+.tile-navy   .info-tile-value,
+.tile-green  .info-tile-value,
+.tile-orange .info-tile-value,
+.tile-blue   .info-tile-value,
+.tile-purple .info-tile-value,
+.tile-slate  .info-tile-value,
+.tile-teal   .info-tile-value { color: #996000; }
+
+/* Maroon tiles stay default */
+.tile-maroon {
+  border-top-color: var(--maroon);
+  border-left-color: var(--maroon);
+}
+.tile-maroon .info-tile-value { color: var(--maroon); }
+
+/* ════════════════════════════════════════════════════════════
+   CARDS — 3D elevated
+   ════════════════════════════════════════════════════════════ */
+.crb-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--maroon);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 2px 4px rgba(0,0,0,0.04),
+    0 6px 16px rgba(0,0,0,0.07);
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: visible !important;
+}
+
+.crb-card:hover {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 4px 8px rgba(0,0,0,0.06),
+    0 12px 28px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.crb-card-header {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+  border-radius: 10px 10px 0 0;
+}
+
+.crb-card-body {
+  padding: 16px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CONTROLS
+   ════════════════════════════════════════════════════════════ */
+.control-panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,1) inset,
+    0 2px 8px rgba(0,0,0,0.05);
+  overflow: visible !important;
+  position: relative;
+  z-index: 10;
+}
+
+.control-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--maroon);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+}
+
+/* Dropdowns */
+.Select-control {
+  border-color: var(--border) !important;
+  border-radius: 6px !important;
+  font-size: 12.5px !important;
+}
+
+.Select-control:hover,
+.is-focused .Select-control {
+  border-color: var(--maroon) !important;
+  box-shadow: 0 0 0 2px rgba(140,29,64,0.12) !important;
+}
+
+.Select-menu-outer {
+  border-color: var(--border) !important;
+  border-radius: 0 0 6px 6px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15) !important;
+  z-index: 99999 !important;
+  position: absolute !important;
+}
+
+.VirtualizedSelectFocusedOption {
+  background: rgba(140,29,64,0.08) !important;
+}
+
+.VirtualizedSelectSelectedOption {
+  background: rgba(140,29,64,0.12) !important;
+  font-weight: 600 !important;
+}
+
+.dash-dropdown .Select-menu-outer,
+.dropdown .Select-menu-outer {
+  z-index: 99999 !important;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn-crb {
+  background: var(--maroon) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  padding: 7px 16px !important;
+  transition: all 0.15s !important;
+  box-shadow: 0 3px 0 #5a0d28, 0 4px 8px rgba(140,29,64,0.3) !important;
+}
+
+.btn-crb:hover {
+  background: #7a1535 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 0 #5a0d28, 0 6px 14px rgba(140,29,64,0.35) !important;
+}
+
+.btn-crb:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 1px 0 #5a0d28 !important;
+}
+
+.btn-download {
+  background: #1B5E20 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 6px 14px !important;
+  box-shadow: 0 2px 0 #0d3010, 0 3px 8px rgba(27,94,32,0.3) !important;
+  transition: all 0.15s !important;
+}
+
+.btn-download:hover {
+  background: #155016 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── Mode toggle ─────────────────────────────────────────── */
+.mode-toggle {
+  display: inline-flex;
+  background: #eceff1;
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 14px;
+}
+
+.mode-btn {
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all 0.15s;
+}
+
+.mode-btn.active {
+  background: var(--maroon);
+  color: white;
+  box-shadow: 0 2px 6px rgba(140,29,64,0.35);
+}
+
+/* ── Tables ────────────────────────────────────────────────── */
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
+  background: var(--navy) !important;
+  color: white !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 8px 12px !important;
+}
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
+  font-size: 12px !important;
+  padding: 7px 12px !important;
+  color: var(--text-main) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   FOOTER — ASU branded
+   ════════════════════════════════════════════════════════════ */
+.crb-footer {
+  margin-left: 220px;
+  background: white;
+  /* Top: 4px maroon + 2px gold */
+  border-top: 4px solid var(--maroon);
+  box-shadow: 0 -2px 0 var(--gold);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.crb-footer-left {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--maroon);
+  letter-spacing: 0.2px;
+}
+
+.crb-footer-center {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  flex: 1;
+}
+
+.crb-footer-right {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* Simple fallback for the current string-only footer */
+.crb-footer > * {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── Hamburger ──────────────────────────────────────────────── */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px;
+  z-index: 2000;
+  background: var(--maroon);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 36px; height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sidebar {
+    transform: translateX(-220px);
+    transition: transform 0.25s ease;
+    z-index: 1500;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(140,29,64,0.2);
+  }
+  .main-content  { margin-left: 0 !important; padding-top: 52px; }
+  .crb-footer    { margin-left: 0 !important; }
+  .sidebar-toggle { display: flex; }
+  .tab-body      { padding: 12px 14px !important; }
+  .tab-header    { padding: 0 14px 0 18px !important; height: auto; min-height: 56px; }
+  .tab-header h2 { font-size: 15px !important; }
+  .info-tile-value { font-size: 17px !important; }
+}
+
+@media (max-width: 600px) {
+  .control-panel .row { flex-direction: column !important; }
+  .control-panel .col, .control-panel [class*="col-"] {
+    width: 100% !important; max-width: 100% !important;
+  }
+  .crb-card-body { padding: 10px !important; }
+}
+
+/* ── Plotly ──────────────────────────────────────────────────── */
+.js-plotly-plot .plotly .main-svg {
+  border-radius: 8px;
+}
+
+/* ── Loading ─────────────────────────────────────────────────── */
+._dash-loading { background: rgba(255,255,255,0.8) !important; }
+._dash-loading-callback {
+  background: var(--maroon) !important;
+  height: 3px !important;
+}
+
+/* ── Findings / banner strips ────────────────────────────────── */
+[style*="background:#fce4ec"],
+[style*="background: #fce4ec"] {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(140,29,64,0.08) !important;
+}
+[style*="background:#e3f2fd"],
+[style*="background: #e3f2fd"] {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(1,87,155,0.08) !important;
+}
+[style*="background:#fff3e0"],
+[style*="background: #fff3e0"] {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(230,81,0,0.08) !important;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PUBLICATIONS TAB
+   ════════════════════════════════════════════════════════════ */
+.pub-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+.pub-card:hover {
+  box-shadow: 0 6px 20px rgba(140,29,64,0.13);
+  transform: translateY(-2px);
+}
+.pub-card-highlight {
+  border-left: 4px solid var(--maroon);
+  background: linear-gradient(135deg, #fff8f9 0%, #ffffff 100%);
+  box-shadow: 0 4px 16px rgba(140,29,64,0.10);
+}
+
+/* Publication info tiles row */
+.pub-tiles-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.pub-tile {
+  border-radius: 4px;
+  padding: 7px 12px 7px 10px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #ffffff;
+  border: none;
+  border-top: 3px solid var(--maroon);
+  border-left: 3px solid var(--maroon);
+  box-shadow:
+    -2px -2px 0 0 rgba(0,0,0,0.04),
+    2px 4px 8px rgba(0,0,0,0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.pub-tile:hover {
+  transform: translateY(-2px) translateX(1px);
+  box-shadow:
+    -3px -3px 0 0 rgba(0,0,0,0.06),
+    4px 7px 14px rgba(0,0,0,0.10);
+}
+.pub-tile-icon {
+  font-size: 13px;
+  margin-bottom: 2px;
+  opacity: 0.5;
+}
+.pub-tile-value {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--maroon);
+}
+.pub-tile-label {
+  font-size: 10px;
+  margin-top: 2px;
+  line-height: 1.2;
+  color: var(--text-muted);
+}
+/* Gold alternate for even-numbered tiles */
+.pub-tile.tile-navy,
+.pub-tile.tile-green,
+.pub-tile.tile-gold {
+  border-top-color: var(--gold2);
+  border-left-color: var(--gold2);
+}
+.pub-tile.tile-navy   .pub-tile-value,
+.pub-tile.tile-green  .pub-tile-value,
+.pub-tile.tile-gold   .pub-tile-value { color: #996000; }
+
+.pub-tile.tile-maroon {
+  border-top-color: var(--maroon);
+  border-left-color: var(--maroon);
+}
+.pub-tile.tile-maroon .pub-tile-value { color: var(--maroon); }
+
+/* Topic tags */
+.pub-tag {
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* Filter bar */
+.pub-filter-bar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* ── Readable / highlighted links (content + footer; NOT sidebar nav) ── */
+.tab-body a, .crb-footer a, .crb-card a, .control-panel a, .tab-header a {
+  color: #01579B;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.tab-body a:hover, .crb-footer a:hover, .crb-card a:hover { color: #8C1D40; }
+/* sidebar nav links keep their own style (no underline) */
+.nav-link, .nav-link:hover { text-decoration: none; }
+/* bootstrap icon vertical align in nav */
+.nav-link .bi { vertical-align: -2px; }
+
+/* ── Thin sidebar scrollbar (many nav items) ── */
+.sidebar::-webkit-scrollbar { width: 7px; }
+.sidebar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.sidebar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.sidebar { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+
+/* ════════════════════════════════════════════════════════════
+   SUB-TAB BAR — view switcher inside each top-level group
+   ════════════════════════════════════════════════════════════ */
+.subtab-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 16px 14px;             /* separate card, gap from sidebar + below */
+  padding: 12px 18px;
+  background: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(13,33,55,0.12);
+  position: sticky;
+  top: 10px;
+  z-index: 50;
+}
+.subtab-intro {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  line-height: 1.4;
+}
+/* Dropdown view selector (decision-support style) */
+.subnav-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.subnav-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--maroon);
+  white-space: nowrap;
+}
+.subnav-dropdown {
+  min-width: 320px;
+  max-width: 420px;
+  font-size: 13px;
+}
+.subnav-dropdown .Select-control,
+.subnav-dropdown .is-focused .Select-control {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(13,33,55,0.10) !important;
+  font-weight: 600;
+  color: var(--navy);
+}
+.subnav-dropdown .Select-menu-outer {
+  border-radius: 8px !important;
+  box-shadow: 0 8px 20px rgba(13,33,55,0.18) !important;
+  font-weight: 500;
+}
+.subtab {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--slate);
+  background: #f4f6f9;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  text-decoration: none !important;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.subtab:hover {
+  background: rgba(140,29,64,0.08);
+  color: var(--maroon);
+  border-color: rgba(140,29,64,0.3);
+}
+.subtab.active {
+  background: var(--maroon);
+  color: #fff;
+  border-color: var(--maroon);
+  box-shadow: 0 2px 8px rgba(140,29,64,0.30);
+}
+.subtab.active .bi { color: var(--gold); }
+
+/* ════════════════════════════════════════════════════════════
+   GLOBAL HEADER — logos only, + separate title container
+   (same on every page)
+   ════════════════════════════════════════════════════════════ */
+/* Right-side logo header — separate 3D white panel, ON THE SAME LINE
+   as the sidebar header, logos only (no text), no maroon boundary. */
+.app-header {
+  background: #ffffff;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 10px 16px 0;             /* gap from sidebar + screen edge; not attached */
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  z-index: 6;
+  box-shadow: 0 6px 16px rgba(13,33,55,0.13);
+}
+
+/* Title container — raised 3D white card, separated from the page header below */
+.app-titlebar {
+  background: #ffffff;
+  margin: 10px 16px 16px;          /* side margins + gap below → distinct card */
+  padding: 14px 22px 16px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  z-index: 5;
+  /* layered 3D drop shadow — panel floats above the page */
+  box-shadow: 0 8px 20px rgba(13,33,55,0.16),
+              0 2px 5px rgba(13,33,55,0.09);
+}
+.app-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--maroon);
+  letter-spacing: -0.3px;
+  margin: 0 0 4px 0;
+  line-height: 1.15;
+}
+.app-subtitle {
+  font-size: 11.5px;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.45;
+  max-width: 1100px;
+}
+
+/* Scenario preset buttons */
+.sc-preset-btn {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--maroon);
+  background: #fff;
+  border: 1px solid rgba(140,29,64,0.35);
+  border-radius: 16px;
+  padding: 3px 12px;
+  margin-right: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.sc-preset-btn:hover { background: var(--maroon); color: #fff; }
+
+/* Horizontal sub-tabs (Kristen-style) — used where group nav = "tabs" */
+.subtab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 2px solid var(--border);
+}
+.subtab-tab {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--slate);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 6px 6px 0 0;
+  padding: 8px 16px;
+  margin-bottom: -2px;
+  text-decoration: none !important;
+  transition: all 0.15s;
+}
+.subtab-tab:hover {
+  color: var(--maroon);
+  background: rgba(140,29,64,0.05);
+}
+.subtab-tab.active {
+  color: var(--maroon);
+  border-bottom: 3px solid var(--maroon);
+  background: #fff;
+}
+.subtab-tab.active .bi { color: var(--gold); }
+
+/* "How to use" helper strip on interactive tabs */
+.howto-strip {
+  background: #eef5fb;
+  border: 1px solid #d6e6f3;
+  border-left: 3px solid #01579B;
+  border-radius: 0 6px 6px 0;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  color: #37474f;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE  — works on any screen, nothing breaks
+   ════════════════════════════════════════════════════════════ */
+
+/* Hamburger toggle (hidden on desktop, shown on small screens) */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px;
+  z-index: 1100;
+  width: 42px; height: 42px;
+  border: none; border-radius: 10px;
+  background: var(--maroon); color: #fff; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(13,33,55,0.28);
+  align-items: center; justify-content: center;
+}
+.sidebar-toggle::before { content: "\2630"; font-size: 20px; line-height: 1; }
+
+/* Graphs & images never overflow */
+.js-plotly-plot, .plotly, .dash-graph { max-width: 100% !important; }
+img { max-width: 100%; height: auto; }
+.tab-body table { max-width: 100%; }
+
+/* Tablet / small laptop */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 6px 0 28px rgba(13,33,55,0.30);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .main-content { margin-left: 0 !important; }
+  .sidebar-toggle { display: flex; }
+  .app-header { padding-left: 62px; }       /* clear the hamburger */
+  .header-logo { width: 36px; height: 36px; }
+  .app-title { font-size: 17px; }
+  .app-subtitle { font-size: 10.5px; }
+  .tab-header h2 { font-size: 16px; }
+  .subnav-row { flex-wrap: wrap; }
+  .subnav-dropdown { min-width: 0; width: 100%; max-width: 100%; }
+  .subtab-tabs { gap: 0; flex-wrap: wrap; }
+  .subtab-tab { padding: 7px 11px; font-size: 12px; }
+  /* On tablets & phones, stack ALL grid columns full-width so side-by-side
+     charts/tables/text never get cramped enough to overlap. */
+  .tab-body .row > [class*="col-"],
+  .tab-body .row > .col { flex: 0 0 100% !important; max-width: 100% !important; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .app-header, .app-titlebar, .subtab-bar, .tab-header { margin-left: 8px; margin-right: 8px; }
+  .tab-body { padding: 10px 8px; }
+  .app-title { font-size: 15.5px; }
+  .app-subtitle { font-size: 10px; }
+  .info-tile-value { font-size: 18px; }
+  .info-tile { min-height: 70px; }
+  .crb-card { overflow-x: auto; }           /* wide tables scroll instead of breaking */
+  .tab-header { min-height: 0; padding: 10px 14px; }
+  .header-logo { width: 30px; height: 30px; }
+  .header-logo-strip { gap: 6px; right: 12px; }
+}
+
+/* Sidebar sub "Decision ▪ Support ▪ Tool" — square dots, sits under CRIA */
+.sidebar-logo-sub { white-space: normal; line-height: 1.3; }
+.dst-dot { color: var(--gold); margin: 0 4px; font-size: 11px; vertical-align: middle; }
+
+/* ════════════════════════════════════════════════════════════
+   GRAPH / CARD ANIMATION + RESPONSIVE GRAPHS
+   ════════════════════════════════════════════════════════════ */
+@keyframes cribEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cribFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* cards slide + fade in when a page renders */
+.crb-card { animation: cribEnter 0.5s cubic-bezier(.2,.7,.3,1) both; }
+/* tiles fade only (keeps their hover-lift transform intact) */
+.info-tile { animation: cribFade 0.5s ease both; }
+/* the graph itself eases in */
+.dash-graph, .js-plotly-plot { animation: cribFade 0.6s ease both; }
+
+/* graphs always fill their container width (responsive) */
+.js-plotly-plot, .js-plotly-plot .plot-container, .js-plotly-plot .svg-container { width: 100% !important; }
+
+/* smooth, professional card hover */
+.crb-card { transition: box-shadow 0.2s ease, transform 0.2s ease; }
+.crb-card:hover { box-shadow: 0 10px 26px rgba(13,33,55,0.13), 0 3px 8px rgba(13,33,55,0.08); }
+
+/* ── Fix: dropdown menus must never be clipped / hidden ── */
+.Select-menu-outer, .Select-menu, .VirtualizedSelectMenu,
+.dash-dropdown .Select-menu-outer { z-index: 4000 !important; }
+/* containers that hold dropdowns must not clip their pop-up menu */
+.crb-card, .control-panel, .subtab-bar { overflow: visible !important; }
+/* the card whose dropdown is open rises above neighbouring cards */
+.crb-card:focus-within { position: relative; z-index: 60; }
+.subtab-bar:focus-within { z-index: 200; }
+
+/* ── Maroon info-dot (ⓘ) popover: hide the default disclosure triangle ── */
+.info-dot > summary { list-style: none; }
+.info-dot > summary::-webkit-details-marker { display: none; }
+.info-dot > summary::marker { content: ""; }
+
+/* ════════════════════════════════════════════════════════════
+   FULLY-RESPONSIVE HARDENING  — any screen, any browser
+   (this block is intentionally last so it wins)
+   ════════════════════════════════════════════════════════════ */
+
+/* 1 · Universal box model + kill horizontal overflow everywhere.
+      Horizontal scrollbars are the #1 cause of "not responsive". */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
+#react-entry-point, #_dash-app-content { max-width: 100%; overflow-x: hidden; }
+.main-content { max-width: 100%; overflow-x: hidden; }
+
+/* 2 · Media & wide elements never push the page wider than the screen. */
+img, svg, video, canvas, iframe { max-width: 100%; height: auto; }
+.js-plotly-plot, .plotly, .dash-graph,
+.js-plotly-plot .plot-container, .js-plotly-plot .svg-container { max-width: 100% !important; }
+pre, code { white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; }
+
+/* 3 · Long words / URLs in cards wrap instead of overflowing.
+      break-word (not anywhere) so normal short labels never split per-character. */
+.crb-card, .tab-body, .info-tile-label, .app-subtitle, .pub-card { overflow-wrap: break-word; }
+/* control labels & option labels must never break mid-word */
+.control-label, .dash-label, .form-check-label { white-space: nowrap; overflow-wrap: normal; }
+
+/* 4 · Wide tables scroll inside their own card rather than the whole page. */
+.crb-card-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.dash-table-container { overflow-x: auto; }
+
+/* 5 · Mobile-correct viewport height for the sidebar drawer
+      (dvh/svh avoid the iOS/Android address-bar 100vh bug; vh is the fallback). */
+.sidebar { height: 100vh; height: 100svh; height: 100dvh; }
+
+/* 6 · Dropdowns/filters: never force a min-width wider than the viewport. */
+.subnav-dropdown, #pub-filter-tag, .Select, .dash-dropdown { max-width: 100%; }
+
+/* ── Large desktop / 4K: keep content readable, not stretched edge-to-edge ── */
+@media (min-width: 1800px) {
+  .app-header, .app-titlebar, .subtab-bar, .tab-header { max-width: 1680px; }
+  .tab-body { max-width: 1680px; margin-left: auto; margin-right: auto; }
+}
+
+/* ── Mid laptop (≤1200px): tighten cards a touch ── */
+@media (max-width: 1200px) {
+  .info-tile-value { font-size: 19px; }
+  .subnav-dropdown { min-width: 0; }
+}
+
+/* ── Small phones (≤420px): final tightening so nothing clips ── */
+@media (max-width: 420px) {
+  body { font-size: 12.5px; }
+  .app-header, .app-titlebar, .subtab-bar, .tab-header { margin-left: 6px; margin-right: 6px; }
+  .app-title { font-size: 14px; }
+  .app-subtitle { font-size: 9.5px; }
+  .tab-header h2 { font-size: 14px !important; }
+  .tab-body { padding: 8px 6px; }
+  .crb-card-body { padding: 9px !important; }
+  .info-tile-value { font-size: 16px !important; }
+  .info-tile { min-height: 64px; padding: 8px 10px; }
+  .info-tile-label { font-size: 10px; }
+  .subnav-dropdown, #pub-filter-tag { width: 100%; min-width: 0; }
+  .subnav-row { gap: 6px; }
+  .header-logo { width: 28px; height: 28px; }
+  .crb-footer { flex-direction: column; text-align: center; }
+  .crb-footer-center, .crb-footer-right { text-align: center; }
+  /* dbc columns stack fully on the smallest screens */
+  .tab-body .row > [class*="col-"] { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* ── Very short landscape phones: let the sidebar drawer scroll ── */
+@media (max-height: 480px) {
+  .sidebar { overflow-y: auto; }
+}
+
+/* ── Touch devices: bigger tap targets, no sticky hover-stuck states ── */
+@media (hover: none) {
+  .nav-link, .subtab, .subtab-tab, .btn-crb, .btn-download { min-height: 38px; }
+  .crb-card:hover { transform: none; }   /* avoid stuck lift on tap */
+}
+
+/* ── Respect users who prefer reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   OVERLAP FIXES  — card headers + sliders on narrow screens
+   ════════════════════════════════════════════════════════════ */
+
+/* 7 · Card headers are flex rows (title + subtitle + CSV button + ★ badge).
+      Without wrapping they collide/overlap on phones. Let them wrap,
+      let text shrink, and push action buttons to the right edge. */
+.crb-card-header {
+  flex-wrap: wrap;
+  row-gap: 4px;
+  line-height: 1.3;
+}
+.crb-card-header > span { min-width: 0; overflow-wrap: anywhere; }
+.crb-card-header .btn-download,
+.crb-card-header button { margin-left: auto; }   /* float:right replacement, flex-safe */
+
+/* 8 · Slider / RangeSlider year marks (Dash 3.x uses .dash-slider-* ;
+      older dcc uses .rc-slider-mark-text). Shrink the labels so the year
+      ticks never overlap, and give the track breathing room at both ends. */
+.dash-slider-wrapper, .rc-slider { margin-left: 6px !important; margin-right: 6px !important; }
+.dash-slider-mark, .rc-slider-mark-text {
+  font-size: 10px !important;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .dash-slider-mark, .rc-slider-mark-text { font-size: 9px !important; }
+}
+@media (max-width: 420px) {
+  .dash-slider-mark, .rc-slider-mark-text { font-size: 8px !important; }
+}
+/* slider value tooltips never wrap to a vertical stack ("2 0 2 4") or clip */
+.dash-slider-tooltip, .rc-slider-tooltip-inner, .rc-slider-tooltip {
+  white-space: nowrap !important;
+  font-size: 10px !important;
+}
+/* room below sliders so a tooltip/value box can't overlap the next control */
+.dash-slider-wrapper, .rc-slider { margin-bottom: 10px; }
+
+/* 9 · Plotly charts: guarantee they never spill past their card on mobile. */
+.crb-card .js-plotly-plot { width: 100% !important; }
+.crb-card-body > .dash-graph,
+.crb-card > .dash-graph { width: 100% !important; }

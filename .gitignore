@@ -1,0 +1,66 @@
+# Raw data — NetCDF / shapefiles, far too large for GitHub (tens of GB, >100MB/file limit)
+raw_data/
+*.nc
+*.shp
+*.shx
+*.dbf
+*.sbn
+*.sbx
+../chi_project\ data/
+../../chi_project\ data/
+
+# Office temp lock files
+~$*
+
+# Pre-built figures
+data/_figs/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Env
+.env
+.venv
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Spatial parquets are large — only commit if <100 MB total
+# data/cache/spatial/
+
+# ── Keep AI-drafted papers/articles & internal docs OUT of the public app / HuggingFace ──
+Publications/
+documentation/
+project documents/
+Email_to_Prof_Vivoni.md
+CRB_Findings_Report.pdf
+CRIA_Publication_Roadmap.html
+Analysis_Figures/
+
+# Local dev/build utilities — kept locally, not deployed to the public Space
+run_all.command
+run_app.command
+md2pdf.py
+preprocessing/
+tests/
+assets/build_rivers.py
+assets/make_rivers_arcgis.py
+assets/process_rivers.py
+CRB_DST_Audit_Report.xlsx
+.~lock.*#
+
+# Internal project documents — summarized in-app, originals not publicly distributed
+assets/reports/*.pdf
+assets/reports/*.pptx
